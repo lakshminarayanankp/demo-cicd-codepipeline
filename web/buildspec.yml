@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - $(aws ecr get-login --region us-east-1 --registry-ids 517248889123.dkr.ecr.ap-south-1.amazonaws.com/adoptregistry:latest)
+      - 
       - cd web
   build:
     commands:
@@ -12,10 +12,10 @@ phases:
       - docker-compose run web python test_basic.py
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker build -t adoptregistry 
-      - docker tag adoptregistry:latest 517248889123.dkr.ecr.ap-south-1.amazonaws.com/adoptregistry:latest
+      - docker build -t 
+      - docker tag 
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 517248889123.dkr.ecr.ap-south-1.amazonaws.com/adoptregistry:latest
+      - docker push 
